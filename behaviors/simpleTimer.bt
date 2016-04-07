@@ -1,0 +1,215 @@
+{
+    "1": {
+        "id": 1,
+        "class": "Sequence",
+        "name": "",
+        "asset-pack": "core",
+        "children": [
+            "239129c8-95cc-4cb2-8274-8df66680e12f",
+            "4aa76c35-c6f2-45ab-ab1d-7fd9eb9ae7af",
+            "dd4af56d-66e3-4f4e-b132-063cd4268690"
+        ],
+        "decorators": [],
+        "options": {}
+    },
+    "meta": {
+        "version": 1
+    },
+    "239129c8-95cc-4cb2-8274-8df66680e12f": {
+        "id": "239129c8-95cc-4cb2-8274-8df66680e12f",
+        "class": "ExecuteScript",
+        "name": "Initialize display and global vars",
+        "options": {
+            "exec": [
+                "() => {",
+                "  console.log(\"*** Initialize display and global vars\");",
+                "  ",
+                "  // Setup global vars",
+                "  if(notepad.timeStart==undefined){ notepad.timeStart = Math.round(new Date().getTime()); } // get current time",
+                "  if(notepad.timerDurationMS==undefined){ notepad.timerDurationMS = \"60000\"; } // default to 60 seconds",
+                "  if(notepad.timerStatusColor==undefined){ notepad.timerStatusColor = \"#0099ff\"; } // default to 60 seconds",
+                "  if(notepad.timerShowStatus==undefined){ notepad.timerShowStatus = true; }",
+                "  if(notepad.timerShowSimpleCounter==undefined){ notepad.timerShowSimpleCounter = true; }",
+                "  if(notepad.timerShowFullCounter==undefined){ notepad.timerShowFullCounter = true; }",
+                "  notepad.timeEnd = notepad.timeStart + Math.abs(notepad.timerDurationMS);",
+                "  ",
+                "  // Display init",
+                "  var $ = require('jquery');",
+                "  if(!$(\".nTimerStatus\").length){",
+                "    var nTimerStatusDiv = \"<div class=\\\"nTimerStatus\\\">\" +",
+                "    \"    <div class=\\\"clip1\\\"><div class=\\\"slice1\\\"></div></div>\" +",
+                "    \"    <div class=\\\"clip2\\\"><div class=\\\"slice2\\\"></div></div>\" +",
+                "    \"    <div class=\\\"innerCircle\\\"></div>\" +",
+                "    \"    <div class=\\\"status\\\"></div>\" +",
+                "    \"</div>\";",
+                "    var nTimerDisplayDiv = \"<div id=\\\"nTimerCover\\\">\" +",
+                "    \"  <div id=\\\"nTimerCoverInner\\\">\" +",
+                "    \"    <div id=\\\"nTimerDisplay\\\" class=\\\"timeDisplay\\\">\" +",
+                "    \"      <span class=\\\"timeText\\\">15</span><span class=\\\"timeDiv\\\">S</span>\" +",
+                "    \"      <div class=\\\"fullTimeText\\\">\" +",
+                "    \"        <div class=\\\"timeDay\\\">0</div>\" +",
+                "    \"        <div class=\\\"timeHour\\\">0</div>\" +",
+                "    \"        <div class=\\\"timeMin\\\">0</div>\" +",
+                "    \"        <div class=\\\"timeSec\\\">0</div>\" +",
+                "    \"      </div>\" +",
+                "    \"      <div class=\\\"fullTimeCaption\\\">\" +",
+                "    \"        <div class=\\\"timeDay\\\">DAY</div>\" +",
+                "    \"        <div class=\\\"timeHour\\\">HOUR</div>\" +",
+                "    \"        <div class=\\\"timeMin\\\">MIN</div>\" +",
+                "    \"        <div class=\\\"timeSec\\\">SEC</div>\" +",
+                "    \"      </div>\" +",
+                "    \"    </div>\" +",
+                "    \"  </div>\" +",
+                "    \"</div>\";",
+                "    $(\"body\").prepend(nTimerDisplayDiv);",
+                "    // Handle display options",
+                "    if(notepad.timerShowStatus){",
+                "      $(\"body\").prepend(nTimerStatusDiv);",
+                "    } else {",
+                "      $(\".timeDisplay,.fullTimeText,.fullTimeCaption\").css({color:\"#000\"});",
+                "    }",
+                "    if(notepad.timerShowSimpleCounter && !notepad.timerShowFullCounter){",
+                "      $(\".timeDisplay\").css({marginTop:\"216px\"});",
+                "    }",
+                "    if(!notepad.timerShowSimpleCounter && notepad.timerShowFullCounter){",
+                "      $(\".timeDisplay\").css({marginTop:\"310px\"});",
+                "      //$(\".fullTimeText,.fullTimeCaption\").css({marginLeft:\"440px\"});",
+                "    }",
+                "    if(!notepad.timerShowSimpleCounter){ $(\".timeText,.timeDiv\").remove(); }",
+                "    if(!notepad.timerShowFullCounter){ $(\".fullTimeText,.fullTimeCaption\").remove(); }",
+                "    $(\".nTimerStatus\").css({backgroundColor:notepad.timerStatusColor});",
+                "  }",
+                "  $(\"#nTimerCover\").fadeIn(\"fast\");",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "4aa76c35-c6f2-45ab-ab1d-7fd9eb9ae7af": {
+        "id": "4aa76c35-c6f2-45ab-ab1d-7fd9eb9ae7af",
+        "class": "Sequence",
+        "name": "",
+        "options": {},
+        "asset-pack": "core",
+        "parent": 1,
+        "decorators": [
+            "57d15832-7d0d-4fd8-8147-d761a9fe842c"
+        ],
+        "children": [
+            "fe188a61-a260-4263-9f70-c4468cc47064"
+        ],
+        "skipped": false
+    },
+    "57d15832-7d0d-4fd8-8147-d761a9fe842c": {
+        "id": "57d15832-7d0d-4fd8-8147-d761a9fe842c",
+        "class": "TimeoutSucceedJs",
+        "name": "",
+        "options": {
+            "getTime": [
+                "() => {",
+                "    return notepad.timerDurationMS;",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "fe188a61-a260-4263-9f70-c4468cc47064": {
+        "id": "fe188a61-a260-4263-9f70-c4468cc47064",
+        "class": "ExecuteScript",
+        "name": "Step timer, repeat forever",
+        "options": {
+            "exec": [
+                "() => {",
+                "  var $ = require('jquery');",
+                "  ",
+                "  var nCurrTime = Math.round(new Date().getTime()); ",
+                "  notepad.timeLeft = Math.round((notepad.timeEnd - nCurrTime)/1000);",
+                "  ",
+                "  // Display",
+                "  if(notepad.timeEnd>=nCurrTime){",
+                "    var nTimeLeft = (notepad.timeEnd - nCurrTime);",
+                "    var nSec = Math.floor( (nTimeLeft/1000) % 60 );",
+                "    var nMin = Math.floor( (nTimeLeft/1000/60) % 60 );",
+                "    var nHour = Math.floor( (nTimeLeft/(1000*60*60)) % 24 );",
+                "    var nDay = Math.floor( nTimeLeft/(1000*60*60*24) );",
+                "    var nTimeToDisplay = nSec;",
+                "    var nTimeDivToDisplay = \"S\";",
+                "    if(nMin){ nTimeToDisplay = nMin; nTimeDivToDisplay = \"M\"; }",
+                "    if(nHour){ nTimeToDisplay = nHour; nTimeDivToDisplay = \"H\"; }",
+                "    if(nDay){ nTimeToDisplay = nDay; nTimeDivToDisplay = \"D\"; } // else { $(\".fullTimeText .timeDay,.fullTimeCaption .timeDay\").hide(); }",
+                "    ",
+                "    $(\".timeDisplay .timeText\").html(nTimeToDisplay);",
+                "    $(\".timeDisplay .timeDiv\").html(nTimeDivToDisplay);",
+                "    $(\".fullTimeText .timeDay\").html(nDay);",
+                "    $(\".fullTimeText .timeHour\").html(nHour);",
+                "    $(\".fullTimeText .timeMin\").html(nMin);",
+                "    $(\".fullTimeText .timeSec\").html(nSec);",
+                "    progressBarUpdate((notepad.timeEnd - nCurrTime), notepad.timerDurationMS);",
+                "  }",
+                "  ",
+                "  function rotate(element,degree){",
+                "      element.css({",
+                "        '-webkit-transform': 'rotate(' + degree + 'deg)',",
+                "        '-moz-transform': 'rotate(' + degree + 'deg)',",
+                "        '-ms-transform': 'rotate(' + degree + 'deg)',",
+                "        '-o-transform': 'rotate(' + degree + 'deg)',",
+                "        'transform': 'rotate(' + degree + 'deg)',",
+                "        'zoom': 1",
+                "      });",
+                "  }",
+                "  function progressBarUpdate(x,outOf){",
+                "      var firstHalfAngle = 180;",
+                "      var secondHalfAngle = 0;",
+                "      var drawAngle = x / outOf * 360;",
+                "      if(drawAngle <= 180){ firstHalfAngle = drawAngle; } else { secondHalfAngle = drawAngle - 180; }",
+                "      rotate($(\".slice1\"), firstHalfAngle);",
+                "      rotate($(\".slice2\"), secondHalfAngle);",
+                "      //$(\".status\").html(x + \" of \" + outOf);",
+                "  }",
+                "  ",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": "4aa76c35-c6f2-45ab-ab1d-7fd9eb9ae7af",
+        "decorators": [
+            "12a26f64-51b9-4a65-bcc8-fed7d394dc68"
+        ]
+    },
+    "12a26f64-51b9-4a65-bcc8-fed7d394dc68": {
+        "id": "12a26f64-51b9-4a65-bcc8-fed7d394dc68",
+        "class": "WhileCondition",
+        "name": "",
+        "options": {
+            "init": [
+                "() => {",
+                "}"
+            ],
+            "conditional": [
+                "() => {",
+                "    return true;",
+                "}"
+            ]
+        },
+        "asset-pack": "core"
+    },
+    "dd4af56d-66e3-4f4e-b132-063cd4268690": {
+        "id": "dd4af56d-66e3-4f4e-b132-063cd4268690",
+        "class": "ExecuteScript",
+        "name": "Cleanup",
+        "options": {
+            "exec": [
+                "() => {",
+                "  // Display cleanup",
+                "  var $ = require('jquery');",
+                "  $(\"#nTimerCover\").fadeOut(\"fast\",function(){",
+                "    $(\".nTimerStatus\").fadeOut(\"fast\");",
+                "  });",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    }
+}

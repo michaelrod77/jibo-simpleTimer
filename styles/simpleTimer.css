@@ -1,0 +1,18 @@
+#nTimerCover{ display:none; position:absolute; top:0; left:0; }
+#nTimerCoverInner{ position:relative; background-color:transparent; display:table; width:1280px; height:720px; font-family:Verdana,Arial,sans-serif; background-size:cover; background-position:center; background-repeat:no-repeat; }
+
+.timeDisplay{ font-size:240px; font-family:'Roboto',sans-serif; font-weight:300; width:100%; margin-top:150px; color:#fff; text-align:center; vertical-align:middle; }
+.timeDiv{ font-size:120px; margin-left:15px; font-family:'Roboto',sans-serif; font-weight:100; }
+.fullTimeText{ margin-top:0px; color:#AAA; }
+.fullTimeCaption{ color:#777; }
+.fullTimeText,.fullTimeCaption{ clear:both; float:none; margin-left:440px; overflow:auto; }
+.fullTimeText DIV{ width:100px; float:left; font-size:70px;  }
+.fullTimeCaption DIV{ width:100px; float:left; font-size:30px; }
+
+.nTimerStatus{ background-color:#0099ff; width:600px; height:600px; -moz-border-radius:300px; -webkit-border-radius:300px; border-radius:300px; position:absolute; top:60px; left:340px; }
+.clip1{ position:absolute; top:0; left:0; width:600px; height:600px; clip:rect(0px,600px,600px,300px); }
+.clip2{ position:absolute; top:0; left:0; width:600px; height:600px; clip:rect(0,300px,600px,0px); }
+.slice1{ position:absolute; width:600px; height:600px; clip:rect(0px,300px,600px,0px); -moz-border-radius:300px; -webkit-border-radius:300px; border-radius:300px; background-color:#222; border-color:#222; -moz-transform:rotate(0); -webkit-transform:rotate(0); -o-transform:rotate(0); transform:rotate(0); }
+.slice2{ position:absolute; width:600px; height:600px; clip:rect(0px,600px,600px,300px); -moz-border-radius:300px; -webkit-border-radius:300px; border-radius:300px; background-color:#222; border-color:#222; -moz-transform:rotate(0); -webkit-transform:rotate(0); -o-transform:rotate(0); transform:rotate(0); }
+.innerCircle{ position:absolute; width:570px; height:570px; -moz-border-radius:285px; -webkit-border-radius:285px; border-radius:285px; background-color:#000; border-color:#000; margin:15px; }
+.status{ position:absolute; height:30px; width:200px; line-height:60px; text-align:center; top:50%; margin-top:-35px; font-size:60px; color:#fff; display:none; }
