@@ -17,7 +17,7 @@ This skill requires the **jQuery** Node package to run correctly.
 
 2. Add the **jQuery** Node package to your skill via the command line. Just navigate to your skill's folder and use `npm install jQuery`.
 
-3. Add the following 2 lines inside the **<head>** of your *index.html* file:
+3. Add the following 2 lines inside the `<head>` of your *index.html* file:
 
 ```
     <link rel="stylesheet" type="text/css" href="styles/simpleTimer.css" />
@@ -65,7 +65,7 @@ The simpleTimer behavior also has additional options which you can use to custom
 ## FAQs
 
 **What's with the call to fonts.googleapis.com in your installation instructions?**
-For a clean, crisp timer display, I decided to use the Roboto font in the timer styles. If you don't want to use it for any reason, feel free to leave that line out of your **<head>** tag and use the default font instead.
+For a clean, crisp timer display, I decided to use the Roboto font in the timer styles. If you don't want to use it for any reason, feel free to leave that line out of your `<head>` tag and use the default font instead.
 
 **Can I make modifications to simpleTimer?**
 Absolutely! You may choose to modify the behavior itself or just the CSS in any way you wish to match the needs of your skill.  If you would like to share your changes with others, please fork them via GitHub: https://github.com/michaelrod77/jibo-simpleTimer.git
