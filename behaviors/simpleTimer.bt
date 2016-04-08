@@ -22,12 +22,10 @@
         "options": {
             "exec": [
                 "() => {",
-                "  console.log(\"*** Initialize display and global vars\");",
-                "  ",
                 "  // Setup global vars",
                 "  if(notepad.timeStart==undefined){ notepad.timeStart = Math.round(new Date().getTime()); } // get current time",
                 "  if(notepad.timerDurationMS==undefined){ notepad.timerDurationMS = \"60000\"; } // default to 60 seconds",
-                "  if(notepad.timerStatusColor==undefined){ notepad.timerStatusColor = \"#0099ff\"; } // default to 60 seconds",
+                "  if(notepad.timerStatusColor==undefined){ notepad.timerStatusColor = \"#0099ff\"; }",
                 "  if(notepad.timerShowStatus==undefined){ notepad.timerShowStatus = true; }",
                 "  if(notepad.timerShowSimpleCounter==undefined){ notepad.timerShowSimpleCounter = true; }",
                 "  if(notepad.timerShowFullCounter==undefined){ notepad.timerShowFullCounter = true; }",
@@ -65,6 +63,8 @@
                 "    // Handle display options",
                 "    if(notepad.timerShowStatus){",
                 "      $(\"body\").prepend(nTimerStatusDiv);",
+                "      $(\"BODY\").css({backgroundColor:\"#000\"});",
+                "      $(\"#eye\").fadeOut(\"fast\");",
                 "    } else {",
                 "      $(\".timeDisplay,.fullTimeText,.fullTimeCaption\").css({color:\"#000\"});",
                 "    }",
@@ -205,6 +205,9 @@
                 "  var $ = require('jquery');",
                 "  $(\"#nTimerCover\").fadeOut(\"fast\",function(){",
                 "    $(\".nTimerStatus\").fadeOut(\"fast\");",
+                "    $(\"#eye\").fadeIn(\"fast\",function(){",
+                "      $(\"BODY\").css({backgroundColor:\"\"});",
+                "    });",
                 "  });",
                 "}"
             ]

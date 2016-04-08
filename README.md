@@ -1,3 +1,5 @@
+# Jibo: Simple Timer behavior for developers
+
 ## Skill Description
 
 This skill adds a simple visual timer built with CSS to Jibo. It is intended to be used by Jibo SDK developers to have an easy way to incorporate a visual timer into their own
