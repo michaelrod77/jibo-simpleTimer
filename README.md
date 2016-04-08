@@ -32,25 +32,29 @@ By default, the timer runs for 60 seconds with a dynamic blue status band surrou
 
 To set the timer duration, send it via the **getNotepad** argument using **timerDurationMS** (in milliseconds):
 
-    () => {
-    	return {
-    		timerDurationMS:30 * 1000 // 30 seconds
-    	};
-    }
+```
+() => {
+  return {
+    timerDurationMS:30 * 1000 // 30 seconds
+  };
+}
+```
 
-The timerDurationMS option can accept durations as high as a number of days (e.g. for a 5-day timer, use 5 * 24 * 60 * 60 * 1000) although recommended usage is for short durations.
+The **timerDurationMS** option can accept durations as high as a number of days (e.g. for a 5-day timer, use 5 * 24 * 60 * 60 * 1000) although recommended usage is for short durations.
 
 The simpleTimer behavior also has additional options which you can use to customize the display of your timer:
 
-    () => {
-    	return {
-    		timerDurationMS:3 * 60 * 1000 // set the timer duration (default:60 seconds)
-    		timerStatusColor:"#f7b84e", // set the active color of the status band (default:#0099ff,blue)
-    		timerShowStatus:true, // toggle the display of the status band. (default:true) NOTE: When hidden, the timer shows on top of the eye.
-    		timerShowSimpleCounter:false, // toggle the display of the simple counter (default:true)
-    		timerShowFullCounter:true // toggle the display of the full counter (default:true)
-    	};
-    }
+```
+  () => {
+  	return {
+  		timerDurationMS:3 * 60 * 1000 // set the timer duration (default:60 seconds)
+  		timerStatusColor:"#f7b84e", // set the active color of the status band (default:#0099ff,blue)
+  		timerShowStatus:true, // toggle the display of the status band. (default:true) NOTE: When hidden, the timer shows on top of the eye.
+  		timerShowSimpleCounter:false, // toggle the display of the simple counter (default:true)
+  		timerShowFullCounter:true // toggle the display of the full counter (default:true)
+  	};
+  }
+```
 
 **EXAMPLE #1 - With the timerShowFullCounter set to false and the status color set to yellow (#f7b84e):**
 ![Example With the timerShowFullCounter set to false and the status color set to yellow](https://cloud.githubusercontent.com/assets/3519552/14385661/fca29028-fd77-11e5-8465-fa5ea23b1ae4.jpg)
