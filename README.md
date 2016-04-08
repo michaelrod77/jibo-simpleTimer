@@ -6,7 +6,7 @@ This skill adds a simple visual timer built with CSS to Jibo. It is intended to 
 
 skills quickly and with no coding.
 
-https://cloud.githubusercontent.com/assets/3519552/14385649/f17aedf8-fd77-11e5-882b-6eed719a0e16.jpg
+![simpleTimer using 60 sec. countdown with default options](https://cloud.githubusercontent.com/assets/3519552/14385649/f17aedf8-fd77-11e5-882b-6eed719a0e16.jpg)
 
 **Image: simpleTimer using 60 sec. countdown with default options**
 
