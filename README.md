@@ -15,14 +15,14 @@ This skill requires the **jQuery** Node package to run correctly.
 
 1. You only need 2 files added to your skill to incorporate simpleTimer.  Copy *"behaviors/simpleTimer.bt"* to your behaviors folder and *"styles/simpleTimer.css"* to your styles folder.
 
-2. Add the following 2 lines inside the **<head>** of your *index.html* file:
+2. Add the **jQuery** Node package to your skill via the command line. Just navigate to your skill's folder and use `npm install jQuery`.
+
+3. Add the following 2 lines inside the **<head>** of your *index.html* file:
 
 ```
     <link rel="stylesheet" type="text/css" href="styles/simpleTimer.css" />
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,100' rel='stylesheet' type='text/css'>
 ```
-
-3. Add the **jQuery** Node package to your skill via the command line. Just navigate to your skill's folder and use `npm install jQuery`.
 
 ## Usage
 
