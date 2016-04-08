@@ -1,4 +1,4 @@
-# Jibo: Simple Timer behavior for developers
+# Jibo: Simple Timer behavior (for developers)
 
 ## Skill Description
 
