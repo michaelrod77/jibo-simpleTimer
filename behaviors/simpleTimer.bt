@@ -65,6 +65,7 @@
                 "      $(\"body\").prepend(nTimerStatusDiv);",
                 "      $(\"BODY\").css({backgroundColor:\"#000\"});",
                 "      $(\"#eye\").fadeOut(\"fast\");",
+                "      $(\".nTimerStatus\").show();",
                 "    } else {",
                 "      $(\".timeDisplay,.fullTimeText,.fullTimeCaption\").css({color:\"#000\"});",
                 "    }",
@@ -207,6 +208,9 @@
                 "    $(\".nTimerStatus\").fadeOut(\"fast\");",
                 "    $(\"#eye\").fadeIn(\"fast\",function(){",
                 "      $(\"BODY\").css({backgroundColor:\"\"});",
+                "      // Remove all dynamically added elements",
+                "      $(\"#nTimerCover\").remove();",
+                "      $(\".nTimerStatus\").remove();",
                 "    });",
                 "  });",
                 "}"
