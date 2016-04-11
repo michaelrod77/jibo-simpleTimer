@@ -7,7 +7,8 @@
         "children": [
             "239129c8-95cc-4cb2-8274-8df66680e12f",
             "4aa76c35-c6f2-45ab-ab1d-7fd9eb9ae7af",
-            "dd4af56d-66e3-4f4e-b132-063cd4268690"
+            "dd4af56d-66e3-4f4e-b132-063cd4268690",
+            "d0bbb888-e7b7-4b4f-9140-e9a17b6ea630"
         ],
         "decorators": [],
         "options": {}
@@ -213,6 +214,23 @@
                 "      $(\".nTimerStatus\").remove();",
                 "    });",
                 "  });",
+                "}"
+            ]
+        },
+        "asset-pack": "core",
+        "parent": 1
+    },
+    "d0bbb888-e7b7-4b4f-9140-e9a17b6ea630": {
+        "id": "d0bbb888-e7b7-4b4f-9140-e9a17b6ea630",
+        "class": "TimeoutJs",
+        "name": "Wait 1 second (seems to fix an SDK bug)",
+        "options": {
+            "getTime": [
+                "() => {",
+                "    // This timeout seems to fix a bug in the Jibo SDK that occurs when",
+                "    // adding two or more subtrees back-to-back.  The second subtree",
+                "    // gets initialized before the first subtree ends.",
+                "    return 1000;",
                 "}"
             ]
         },
