@@ -2,7 +2,7 @@
   "name": "simpleTimer",
   "version": "0.1.0",
   "description": "",
-  "main": "index.html",
+  "main": "Adds a simple visual timer built with CSS to Jibo, intended to be used by Jibo SDK developers to have an easy way to incorporate a visual timer into their own skills quickly and with no coding.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
