@@ -24,7 +24,7 @@
             "exec": [
                 "() => {",
                 "  // Setup global vars",
-                "  if(notepad.timeStart==undefined){ notepad.timeStart = Math.round(new Date().getTime()); } // get current time",
+                "  notepad.timeStart = Math.round(new Date().getTime()); // get current time",
                 "  if(notepad.timerDurationMS==undefined){ notepad.timerDurationMS = \"60000\"; } // default to 60 seconds",
                 "  if(notepad.timerStatusColor==undefined){ notepad.timerStatusColor = \"#0099ff\"; }",
                 "  if(notepad.timerShowStatus==undefined){ notepad.timerShowStatus = true; }",
